@@ -111,8 +111,6 @@ export default async function ContactPage() {
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="space-y-8">
             <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30">
@@ -142,6 +140,17 @@ export default async function ContactPage() {
                   {contact?.status ? statusMessages[contact.status] : statusMessages.open}
                 </span>
               </div>
+            </div>
+          </div>
+          <div className="space-y-8">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-blue-100 dark:border-gray-700">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 rounded-full bg-blue-100 dark:bg-blue-900/30">
+                  <MessageSquare className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Send a Message</h2>
+              </div>
+              <ContactForm />
             </div>
           </div>
         </div>

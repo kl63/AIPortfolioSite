@@ -15,6 +15,13 @@ interface SkillGroups {
   [category: string]: Skill[]
 }
 
+interface SkillWithId extends Skill {
+  _id: string
+  title?: string
+  image?: any // You might want to replace this with a more specific type from Sanity
+  technologies?: string[]
+}
+
 async function getAbout() {
   const about = await client.fetch(`*[_type == "about"][0]`)
   console.log('About data:', about) // Debug log
@@ -120,7 +127,7 @@ export default async function AboutPage() {
 
           {/* Skills Section */}
           <div className="space-y-16">
-            {Object.entries(groupedSkills).map(([category, categorySkills]: [string, any[]]) => (
+            {Object.entries(groupedSkills).map(([category, categorySkills]: [string, SkillWithId[]]) => (
               <div key={category} className="space-y-8">
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                   {category.charAt(0).toUpperCase() + category.slice(1)}

@@ -164,9 +164,9 @@ export default async function AboutPage() {
                         {/* Technologies */}
                         {skill.technologies && skill.technologies.length > 0 && (
                           <div className="flex flex-wrap gap-1 justify-center mt-3">
-                            {skill.technologies.slice(0, 3).map((tech: string) => (
+                            {skill.technologies.slice(0, 3).map((tech: string, techIndex: number) => (
                               <span
-                                key={tech}
+                                key={`${tech}-${techIndex}`}
                                 className="px-2 py-0.5 bg-blue-50 dark:bg-gray-700 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium"
                               >
                                 {tech}

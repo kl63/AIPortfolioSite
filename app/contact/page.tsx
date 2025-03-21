@@ -47,7 +47,7 @@ export default async function ContactPage() {
               <span className="font-medium">Get in Touch</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Let's Work Together
+              Let&apos;s Work Together
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
               I&apos;m always excited to connect with fellow developers and explore new opportunities

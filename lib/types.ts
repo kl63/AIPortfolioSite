@@ -22,6 +22,7 @@ export interface Project {
   liveUrl?: string
   githubUrl?: string
   completedDate: string
+  status?: 'Completed' | 'In Progress' | 'Planned'
 }
 
 export interface About {

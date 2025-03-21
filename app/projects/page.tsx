@@ -94,7 +94,13 @@ export default async function ProjectsPage() {
 
                     {/* Project status badge */}
                     <div className="absolute top-4 left-4">
-                      <div className="px-3 py-1 bg-blue-500/80 dark:bg-blue-600/80 text-white text-sm rounded-full backdrop-blur-sm">
+                      <div className={`px-3 py-1 text-white text-sm rounded-full backdrop-blur-sm ${
+                        project.status === 'In Progress' 
+                          ? 'bg-yellow-500/80 dark:bg-yellow-600/80'
+                          : project.status === 'Planned'
+                          ? 'bg-purple-500/80 dark:bg-purple-600/80'
+                          : 'bg-blue-500/80 dark:bg-blue-600/80'
+                      }`}>
                         {project.status || 'Completed'}
                       </div>
                     </div>

@@ -2,19 +2,12 @@ import { Mail, Github, Linkedin, MapPin, Calendar, MessageSquare } from "lucide-
 import Link from "next/link"
 import { client } from "@/lib/sanity"
 import ContactForm from "@/app/components/ContactForm"
+import { Contact } from "@/lib/types"
 
 type ContactStatus = 'open' | 'closed' | 'freelance'
 
-interface Contact {
-  email: string
-  githubUrl: string
-  linkedinUrl: string
-  location: string
-  status: ContactStatus
-  availabilityDetails: string
-}
-
 const defaultContact: Contact = {
+  _id: 'default',
   email: "your.email@example.com",
   githubUrl: "https://github.com/yourusername",
   linkedinUrl: "https://linkedin.com/in/yourusername",

@@ -13,7 +13,7 @@ interface Skill {
 }
 
 interface SkillGroups {
-  [category: string]: Skill[]
+  [category: string]: SkillWithId[]
 }
 
 interface SkillWithId extends Skill {
@@ -40,7 +40,7 @@ export default async function AboutPage() {
   const skills = await getSkills()
 
   // Group skills by category
-  const groupedSkills = skills.reduce((acc: SkillGroups, skill: Skill) => {
+  const groupedSkills = skills.reduce((acc: SkillGroups, skill: SkillWithId) => {
     const category = skill.category || 'Other'
     if (!acc[category]) {
       acc[category] = []

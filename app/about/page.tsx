@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react"
 import { User } from "lucide-react"
 import Image from "next/image"
 import { urlFor } from "@/lib/sanity"
+import { SanityImageSource } from "@sanity/image-url/lib/types/types"
 
 interface Skill {
   category: string
@@ -18,7 +19,7 @@ interface SkillGroups {
 interface SkillWithId extends Skill {
   _id: string
   title?: string
-  image?: any // You might want to replace this with a more specific type from Sanity
+  image?: SanityImageSource
   technologies?: string[]
 }
 

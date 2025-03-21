@@ -12,14 +12,27 @@ export async function getHome() {
   return client.fetch(
     groq`*[_type == "home"][0] {
       _id,
-      title,
-      subtitle,
-      description,
-      image {
-        url
+      hero {
+        title,
+        subtitle,
+        image
       },
-      ctaText,
-      ctaLink
+      about {
+        title,
+        description
+      },
+      skills {
+        title,
+        description
+      },
+      projects {
+        title,
+        description
+      },
+      contact {
+        title,
+        description
+      }
     }`
   )
 }

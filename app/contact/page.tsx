@@ -50,7 +50,7 @@ export default async function ContactPage() {
               Let's Work Together
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              I'm always excited to connect with fellow developers and explore new opportunities
+              I&apos;m always excited to connect with fellow developers and explore new opportunities
             </p>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default async function ContactPage() {
                 <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Connect with me</h2>
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                I'm always interested in hearing about new opportunities, projects, or just
+                I&apos;m always interested in hearing about new opportunities, projects, or just
                 connecting with fellow developers.
               </p>
               <div className="space-y-4">

@@ -1,7 +1,7 @@
 import { client } from "@/lib/sanity"
 import { Project } from "@/lib/types"
 import { PortableText } from "@portabletext/react"
-import { Github, Globe, ArrowUpRight, Code2, Sparkles, ExternalLink, Calendar, Tag, Eye } from "lucide-react"
+import { Github, Globe, Code2, Sparkles, Calendar, Tag, Eye } from "lucide-react"
 import Image from "next/image"
 import { urlFor } from "@/lib/sanity"
 import { format } from "date-fns"

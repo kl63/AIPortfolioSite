@@ -28,7 +28,7 @@ export default defineType({
       name: "endDate",
       title: "End Date",
       type: "datetime",
-      hidden: ({ document }) => document?.current,
+      hidden: ({ document }) => Boolean(document?.current),
     }),
     defineField({
       name: "current",

@@ -2,7 +2,7 @@ import { getHome } from "@/lib/queries"
 import { urlFor } from "@/lib/sanity"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Mail, FileText, User } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, User } from "lucide-react"
 import { PortableText } from "@portabletext/react"
 
 export default async function HomePage() {

@@ -128,7 +128,7 @@ export default async function AboutPage() {
 
           {/* Skills Section */}
           <div className="space-y-16">
-            {Object.entries(groupedSkills).map(([category, categorySkills]: [string, SkillWithId[]]) => (
+            {(Object.entries(groupedSkills) as [string, SkillWithId[]][]).map(([category, categorySkills]) => (
               <div key={category} className="space-y-8">
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                   {category.charAt(0).toUpperCase() + category.slice(1)}

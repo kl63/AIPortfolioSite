@@ -1,7 +1,7 @@
 import { Mail, Github, Linkedin, MapPin, Calendar, MessageSquare } from "lucide-react"
 import Link from "next/link"
 import { client } from "@/lib/sanity"
-import { ContactForm } from "@/app/components/ContactForm"
+import ContactForm from "@/app/components/ContactForm"
 
 type ContactStatus = 'open' | 'closed' | 'freelance'
 

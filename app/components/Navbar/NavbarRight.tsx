@@ -1,4 +1,4 @@
-import { ThemeToggle } from '@/components/ThemeToggle'
+import { ThemeToggle } from '@/app/components/ThemeToggle'
 
 export function NavbarRight() {
   return (

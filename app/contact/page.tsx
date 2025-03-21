@@ -1,8 +1,20 @@
 import { Mail, Github, Linkedin, MapPin, Calendar, MessageSquare } from "lucide-react"
 import Link from "next/link"
 import { client } from "@/lib/sanity"
+import { ContactForm } from "@/app/components/ContactForm"
 
-const defaultContact = {
+type ContactStatus = 'open' | 'closed' | 'freelance'
+
+interface Contact {
+  email: string
+  githubUrl: string
+  linkedinUrl: string
+  location: string
+  status: ContactStatus
+  availabilityDetails: string
+}
+
+const defaultContact: Contact = {
   email: "your.email@example.com",
   githubUrl: "https://github.com/yourusername",
   linkedinUrl: "https://linkedin.com/in/yourusername",
@@ -11,9 +23,15 @@ const defaultContact = {
   availabilityDetails: "Please update your contact information in Sanity Studio"
 }
 
+const statusMessages: Record<ContactStatus, string> = {
+  open: 'Open to opportunities',
+  closed: 'Not currently available',
+  freelance: 'Available for freelance'
+}
+
 async function getContactInfo() {
   try {
-    const contact = await client.fetch(`*[_type == "contact"][0]`)
+    const contact = await client.fetch<Contact>(`*[_type == "contact"][0]`)
     return contact || defaultContact
   } catch (error) {
     console.error("Error fetching contact info:", error)
@@ -23,12 +41,6 @@ async function getContactInfo() {
 
 export default async function ContactPage() {
   const contact = await getContactInfo()
-
-  const statusMessages = {
-    open: "Open to opportunities",
-    closed: "Not currently available",
-    freelance: "Open to freelance"
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
@@ -126,7 +138,9 @@ export default async function ContactPage() {
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
                 <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-                <span className="font-medium">{statusMessages[contact.status] || 'Open to opportunities'}</span>
+                <span className="font-medium">
+                  {contact?.status ? statusMessages[contact.status] : statusMessages.open}
+                </span>
               </div>
             </div>
           </div>

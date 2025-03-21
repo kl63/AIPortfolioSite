@@ -4,6 +4,17 @@ import { User } from "lucide-react"
 import Image from "next/image"
 import { urlFor } from "@/lib/sanity"
 
+interface Skill {
+  category: string
+  name: string
+  level: number
+  icon?: string
+}
+
+interface SkillGroups {
+  [category: string]: Skill[]
+}
+
 async function getAbout() {
   const about = await client.fetch(`*[_type == "about"][0]`)
   console.log('About data:', about) // Debug log
@@ -21,14 +32,14 @@ export default async function AboutPage() {
   const skills = await getSkills()
 
   // Group skills by category
-  const groupedSkills = skills.reduce((acc: any, skill: any) => {
+  const groupedSkills = skills.reduce((acc: SkillGroups, skill: Skill) => {
     const category = skill.category || 'Other'
     if (!acc[category]) {
       acc[category] = []
     }
     acc[category].push(skill)
     return acc
-  }, {})
+  }, {} as SkillGroups)
 
   if (!about) {
     return (

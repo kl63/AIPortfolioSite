@@ -26,6 +26,12 @@ export default function AboutUs() {
               With a focus on innovation and user-centric design, we've helped countless brands transform their digital
               presence and connect with their audience in meaningful ways.
             </p>
+            <p className="text-lg text-muted-foreground mb-8">
+              We&apos;re passionate about creating unique and meaningful designs that tell stories.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Our team&apos;s dedication to excellence and innovation has earned us recognition in the industry.
+            </p>
           </motion.div>
           <motion.div
             className="relative h-96"

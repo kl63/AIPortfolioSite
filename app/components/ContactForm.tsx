@@ -39,7 +39,7 @@ export default function ContactForm() {
       console.log(values)
       setIsSubmitting(false)
       form.reset()
-      alert("Thank you for your message. We'll get back to you soon!")
+      alert("Thank you for your message. We&apos;ll get back to you soon!")
     }, 2000)
   }
 
@@ -54,7 +54,7 @@ export default function ContactForm() {
         >
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-4">Get in Touch</h2>
           <p className="text-lg text-muted-foreground">
-            We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
+            We&apos;d love to hear from you. Fill out the form below and we&apos;ll get back to you as soon as possible.
           </p>
         </motion.div>
         <motion.div

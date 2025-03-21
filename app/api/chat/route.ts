@@ -78,21 +78,15 @@ export async function POST(request: Request) {
     console.log('OpenAI response:', response)
 
     return NextResponse.json({ message: response })
-  } catch (error: any) {
+  } catch (error: Error | unknown) {
     console.error('Error in chat API:', error)
-    console.error('Error details:', {
-      message: error.message,
-      type: error.type,
-      code: error.code,
-      status: error.status
-    })
-    
-    return NextResponse.json(
-      { 
-        error: 'Failed to process chat request',
-        details: error.message
-      },
-      { status: 500 }
-    )
+    if (error instanceof Error) {
+      console.error('Error details:', {
+        message: error.message,
+        name: error.name
+      })
+      return NextResponse.json({ error: error.message }, { status: 500 })
+    }
+    return NextResponse.json({ error: 'An unknown error occurred' }, { status: 500 })
   }
 } 

@@ -61,11 +61,12 @@ export default function AIChatBox() {
       }
 
       setMessages(prev => [...prev, { role: 'assistant', content: data.message }])
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       console.error('Error in chat:', error)
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred'
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: `Sorry, I encountered an error: ${error.message}. Please try again or contact support if the issue persists.` 
+        content: `Sorry, I encountered an error: ${errorMessage}. Please try again or contact support if the issue persists.` 
       }])
     } finally {
       setIsLoading(false)

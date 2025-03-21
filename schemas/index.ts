@@ -6,8 +6,9 @@ import About from './about'
 import Contact from './contact'
 import Skill from './skill'
 import Profile from './profile'
+import Home from './home'
 
-export const schemaTypes = [Experience, Project, About, Contact, Skill, Profile]
+export const schemaTypes = [Home, Experience, Project, About, Contact, Skill, Profile]
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: schemaTypes,

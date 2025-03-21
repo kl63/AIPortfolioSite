@@ -1,12 +1,14 @@
 import { type SchemaTypeDefinition } from "sanity"
 
-import Experience from "./experience"
-import Home from "./home"
-import Project from "./project"
-import Skill from "./skill"
-import About from "./about"
-import Contact from "./contact"
+import Experience from './experience'
+import Project from './project'
+import About from './about'
+import Contact from './contact'
+import Skill from './skill'
+import Profile from './profile'
+
+export const schemaTypes = [Experience, Project, About, Contact, Skill, Profile]
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [Experience, Home, Project, Skill, About, Contact],
+  types: schemaTypes,
 } 
